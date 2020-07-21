@@ -49,7 +49,7 @@ You can find your API Gateway Endpoint URL in the output values displayed after 
 Build your application with the `sam build --use-container` command.
 
 ```bash
-{{cookiecutter.project_slug}}$ sam build --use-container
+{{cookiecutter.project_slug}}$ sam build -m requirements.txt --use-container
 ```
 
 The SAM CLI installs dependencies defined in `requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
