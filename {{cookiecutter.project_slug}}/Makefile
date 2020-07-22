@@ -6,5 +6,8 @@ build:
 run:
 	sam local invoke "$(SERVICE)" -e ./events/events.json
 
+deploy:
+	sam deploy --guided
+
 clean:
 	rm -rf .aws-sam
