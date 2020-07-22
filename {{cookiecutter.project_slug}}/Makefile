@@ -1,10 +1,10 @@
-SERVICE={{cookiecutter.project_slug}}
+SERVICE=Service
 
 build:
 	sam build -m requirements.txt --use-container
 
 run:
-	sam local invoke "$(SERVICE)" -e ./events/events.json
+	sam local invoke "$(SERVICE)" -e ./events/event.json
 
 deploy:
 	sam deploy --guided
