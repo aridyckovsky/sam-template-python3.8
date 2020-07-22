@@ -1,6 +1,4 @@
-import json
-
-# import requests
+import requests
 
 def lambda_handler(event, context):
     """Sample pure Lambda function
@@ -24,9 +22,9 @@ def lambda_handler(event, context):
         Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
 
+    r = requests.get("https://api.github.com/events")
+
     return {
-        "statusCode": 200,
-        "body": json.dumps({
-            "message": "Your Lambda function call was successful."
-        }),
+        "statusCode": r.status_code,
+        "body": r.json()
     }

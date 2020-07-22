@@ -1,18 +1,21 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: {{cookiecutter.project_name.lower().replace(' ', '-')}} serverless application
+
 Globals:
+
   Function:
     Timeout: 60
-    Handler: app.lambda_handler
     Runtime: python3.8
     Tracing: Active
 
 Resources:
-  ServiceFunction:
+
+  Service:
     Type: AWS::Serverless::Function 
     Properties:
-      CodeUri: service/
+      CodeUri: ./src
+      Handler: service.app.lambda_handler
       Events:
         Service:
           Type: Api
@@ -21,6 +24,7 @@ Resources:
             Method: get
 
 Outputs:
+
   ServiceApi:
     Description: "API Gateway endpoint URL for Prod stage for service function"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
