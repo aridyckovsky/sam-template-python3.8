@@ -26,5 +26,7 @@ def lambda_handler(event, context):
 
     return {
         "statusCode": r.status_code,
-        "body": r.json()
+        "body": {
+            "message": r.json()
+        }
     }

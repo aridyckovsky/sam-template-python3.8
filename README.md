@@ -7,11 +7,11 @@ with Python 3.8.
 
 ```bash
 .
+├── Makefile
 ├── README.md
 ├── events
 │   └── event.json
 ├── requirements.txt
-├── setup.py
 ├── src
 │   └── service
 │       ├── __init__.py

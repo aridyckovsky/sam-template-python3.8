@@ -59,7 +59,7 @@ Test a single function by invoking it directly with a test event. An event is a 
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-{{cookiecutter.project_slug}}$ sam local invoke ServiceFunction --event events/event.json
+{{cookiecutter.project_slug}}$ sam local invoke Service --event events/event.json
 ```
 
 The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
@@ -91,7 +91,7 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-{{cookiecutter.project_slug}}$ sam logs -n ServiceFunction --stack-name {{cookiecutter.project_slug}} --tail
+{{cookiecutter.project_slug}}$ sam logs -n Service --stack-name {{cookiecutter.project_slug}} --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
