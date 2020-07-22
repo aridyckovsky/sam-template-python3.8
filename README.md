@@ -11,9 +11,11 @@ with Python 3.8.
 ├── events
 │   └── event.json
 ├── requirements.txt
-├── service
-│   ├── __init__.py
-│   └── app.py
+├── setup.py
+├── src
+│   └── service
+│       ├── __init__.py
+│       └── app.py
 ├── template.yaml
 └── tests
     └── unit
