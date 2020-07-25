@@ -5,29 +5,17 @@ Description: {{cookiecutter.project_name.lower().replace(' ', '-')}} serverless 
 Globals:
 
   Function:
-    Timeout: 60
+    Timeout: 30
     Runtime: python3.8
     Tracing: Active
 
 Resources:
 
-  Service:
+  ServiceFunction:
     Type: AWS::Serverless::Function 
     Properties:
       CodeUri: ./src
       Handler: service.app.lambda_handler
-      Events:
-        Service:
-          Type: Api
-          Properties:
-            Path: /
-            Method: get
-  Layer:
-    Type: AWS::Serverless::LayerVersion
-    Properties:
-      ContentUri: service_layer
-      CompatibleRuntimes:
-        - python3.8
-    Metadata:
-      BuildMethod: Makefile
+      FunctionName: 'lambda-service'
+      Description: 'Lambda service' 
 
